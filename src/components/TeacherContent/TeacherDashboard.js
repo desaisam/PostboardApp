@@ -49,24 +49,27 @@ const TeacherDashboard = (props) => {
         </div>
 
         <div className="content-container" float="">
-          <div className={classes.root}>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              onClick={handleButtonCreate}
-            >
-              Create
-            </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              onClick={handleButtonEdit}
-            >
-              Edit {"    "}
-            </Button>
+          <div className="content-container__centered">
+            <div className={classes.root}>
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                onClick={handleButtonCreate}
+              >
+                Create
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                onClick={handleButtonEdit}
+              >
+                Edit {"    "}
+              </Button>
+            </div>
           </div>
+
           {comp === "" && (
             <div>
               <NestedGrid></NestedGrid>

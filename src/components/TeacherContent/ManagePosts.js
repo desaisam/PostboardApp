@@ -77,27 +77,25 @@ export default function EditPost(props) {
     },
   ];
   return (
-    <div className="content-container">
-      <div className="input-group">
-        <div className="input-group__item" float="right">
-          <input
-            type="text"
-            className="text-input"
-            placeholder="Search assignments"
+    <div className="input-group">
+      <div className="input-group__item">
+        <input
+          type="text"
+          className="text-input"
+          placeholder="Search assignments"
+        />
+        <div className="input-group__item">
+          <Select
+            className="select"
+            defaultValue={defaultOptions[0]}
+            options={groupedOptions}
+            formatGroupLabel={formatGroupLabel}
           />
-          <div className="input-group__item">
-            <Select
-              className="select"
-              defaultValue={defaultOptions[0]}
-              options={groupedOptions}
-              formatGroupLabel={formatGroupLabel}
-            />
-          </div>
-          <div className="input-group__item">
-            <DateRangePicker showClearDates={true} numberOfMonths={1} />
-          </div>
-          <DashboardListForTeachers></DashboardListForTeachers>
         </div>
+        <div className="input-group__item">
+          <DateRangePicker showClearDates={true} numberOfMonths={1} />
+        </div>
+        <DashboardListForTeachers></DashboardListForTeachers>
       </div>
     </div>
   );

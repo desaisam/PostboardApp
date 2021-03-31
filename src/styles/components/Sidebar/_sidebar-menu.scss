@@ -1,0 +1,46 @@
+.sidebar-wrapper {
+  display: inline-block;
+  .sidebar-menu {
+    padding-bottom: 10px;
+
+    .header-menu span {
+      font-weight: bold;
+      font-size: 14px;
+      padding: 15px 20px 5px 20px;
+      display: inline-block;
+    }
+
+    ul li a {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      text-decoration: none;
+      position: relative;
+      padding: 8px 30px 8px 20px;
+      width: 100%;
+
+      &:hover > i::before {
+        display: inline-block;
+        animation: swing ease-in-out 0.5s 1 alternate;
+      }
+
+      i {
+        margin-right: 10px;
+        font-size: 12px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+
+      .menu-text {
+        flex-grow: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        flex-shrink: 1;
+        overflow: hidden;
+      }
+    }
+  }
+}

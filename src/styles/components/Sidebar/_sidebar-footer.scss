@@ -1,0 +1,82 @@
+.sidebar-wrapper {
+  .sidebar-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+
+    > div {
+      flex-grow: 1;
+      text-align: center;
+      height: $sidebar-footer-height;
+      line-height: $sidebar-footer-height;
+      position: static;
+      display: flex;
+
+      > a {
+        flex-grow: 1;
+      }
+
+      a .notification {
+        position: absolute;
+        top: 0;
+      }
+
+      &.pinned-footer {
+        display: none;
+      }
+    }
+
+    .dropdown-menu {
+      bottom: 36px;
+      left: 0 !important;
+      top: initial !important;
+      right: 0;
+      transform: none !important;
+      border-radius: 0;
+      font-size: 0.9rem;
+    }
+
+    .messages {
+      .dropdown-item {
+        padding: 0.25rem 1rem;
+      }
+
+      .messages-header {
+        padding: 0 1rem;
+      }
+
+      .message-content {
+        display: flex;
+
+        .pic {
+          width: 40px;
+          height: 40px;
+          overflow: hidden;
+
+          img {
+            object-fit: cover;
+            height: 100%;
+          }
+        }
+
+        .content {
+          line-height: 1.6;
+          padding-left: 5px;
+          width: calc(100% - 40px);
+
+          .message-title {
+            font-size: 13px;
+          }
+
+          .message-detail {
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}

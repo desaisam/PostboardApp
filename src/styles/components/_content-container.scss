@@ -1,0 +1,8 @@
+.content-container {
+  position: fixed;
+  top: 0;
+  left: $sidebar-width;
+  display: inline-block;
+  padding: 0 $l-size;
+  max-width: 100rem;
+}

@@ -57,7 +57,7 @@ const TeacherDashboard = (props) => {
                 size="large"
                 onClick={handleButtonCreate}
               >
-                Create
+                Create Post
               </Button>
               <Button
                 variant="contained"
@@ -65,7 +65,7 @@ const TeacherDashboard = (props) => {
                 size="large"
                 onClick={handleButtonEdit}
               >
-                Edit {"    "}
+                Edit Post{"    "}
               </Button>
             </div>
           </div>

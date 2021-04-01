@@ -41,59 +41,55 @@ const TeacherDashboard = (props) => {
   const classes = useStyles();
   return (
     <Router>
-      <GlobalAppContext.Provider
-        value={{ toggled, setToggled, hasBackground, setHasBackground }}
-      >
-        <div className={"page-wrapper default-theme bg1 " + style}>
-          <SideBar />
-        </div>
+      <div className={"page-wrapper default-theme bg1 " + style}>
+        <SideBar />
+      </div>
 
-        <div className="content-container" float="">
-          <div className="content-container__centered">
-            <div className={classes.root}>
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                onClick={handleButtonCreate}
-              >
-                Create Post
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                onClick={handleButtonEdit}
-              >
-                Edit Post{"    "}
-              </Button>
-            </div>
+      <div className="content-container ">
+        <div className="content-container__centered">
+          <div className={classes.root}>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              onClick={handleButtonCreate}
+            >
+              Create Post
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              onClick={handleButtonEdit}
+            >
+              Edit Post{"    "}
+            </Button>
           </div>
-
-          {comp === "" && (
-            <div>
-              <NestedGrid></NestedGrid>
-            </div>
-          )}
-          {comp === "Create" && (
-            <div>
-              <PageHeader
-                title="Create Item"
-                icon={<CreateIcon fontSize="small" />}
-                setComp={setComp}
-              />
-
-              <Paper className={classes.pageContent}>{<CreatePost />}</Paper>
-            </div>
-          )}
-          {comp === "Edit" && (
-            <div>
-              <PageHeader title="Manage Item" setComp={setComp} />
-              <ManagePost></ManagePost>
-            </div>
-          )}
         </div>
-      </GlobalAppContext.Provider>
+
+        {comp === "" && (
+          <div>
+            <NestedGrid></NestedGrid>
+          </div>
+        )}
+        {comp === "Create" && (
+          <div>
+            <PageHeader
+              title="Create Post"
+              icon={<CreateIcon fontSize="small" />}
+              setComp={setComp}
+            />
+
+            <Paper className={classes.pageContent}>{<CreatePost />}</Paper>
+          </div>
+        )}
+        {comp === "Edit" && (
+          <div>
+            <PageHeader title="Manage Post" setComp={setComp} />
+            <ManagePost></ManagePost>
+          </div>
+        )}
+      </div>
     </Router>
   );
 };

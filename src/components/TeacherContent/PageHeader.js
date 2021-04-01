@@ -74,13 +74,7 @@ export default function PageHeader(props) {
             </Button>
           </DialogActions>
         </Dialog>
-        <div className={classes.pageTitle}>
-          <Typography variant="h5" component="div">
-            <Box textAlign="center" fontWeight="fontWeightBold" m={1}>
-              {title}
-            </Box>
-          </Typography>
-        </div>
+        <div className="content-box2">{title}</div>
       </div>
     </Paper>
   );

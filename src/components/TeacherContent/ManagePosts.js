@@ -78,7 +78,7 @@ export default function EditPost(props) {
     },
   ];
   return (
-    <div className="container full-width">
+    <div className="container full-width ">
       <div className="input-group__item ">
         <input
           type="text"
@@ -96,8 +96,9 @@ export default function EditPost(props) {
         <div className="input-group__item">
           <DateRangePicker showClearDates={true} numberOfMonths={1} />
         </div> */}
-
-        <DashboardListForTeachers></DashboardListForTeachers>
+        <div className="content-box">
+          <DashboardListForTeachers></DashboardListForTeachers>
+        </div>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ const DashboardList = (props) => (
       <div className="show-for-desktop">Assignment</div>
       <div className="show-for-desktop">Due Time</div>
     </div>
-    <div className="list-body">
+    <div className="list-body" style={{ overflowY: "scroll", height: "550px" }}>
       {props.assignments.length === 0 ? (
         <div className="list-item list-item--message">
           <span>No Assignments</span>

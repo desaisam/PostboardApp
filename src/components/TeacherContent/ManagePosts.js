@@ -15,6 +15,7 @@ import "react-dates/lib/css/_datepicker.css";
 import Select from "react-select";
 import DashboardListForTeachers from "./DashboardListForTeachers";
 import { Box } from "@material-ui/core";
+
 export default function EditPost(props) {
   const defaultOptions = [
     { value: "date", label: "Date", color: "#00B8D9" },
@@ -77,14 +78,14 @@ export default function EditPost(props) {
     },
   ];
   return (
-    <div className="input-group">
-      <div className="input-group__item">
+    <div className="container full-width">
+      <div className="input-group__item ">
         <input
           type="text"
           className="text-input"
           placeholder="Search assignments"
         />
-        <div className="input-group__item">
+        {/* <div className="input-group__item">
           <Select
             className="select"
             defaultValue={defaultOptions[0]}
@@ -94,7 +95,8 @@ export default function EditPost(props) {
         </div>
         <div className="input-group__item">
           <DateRangePicker showClearDates={true} numberOfMonths={1} />
-        </div>
+        </div> */}
+
         <DashboardListForTeachers></DashboardListForTeachers>
       </div>
     </div>

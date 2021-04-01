@@ -1,6 +1,9 @@
 # Postboard - Project for CS5340
 
-Authors: Dan Paddock and Sameera Desai
+Authors: Dan Paddock and Sameer Desai
+
+### `Heroku Link`
+Open[https://postboard-sp21.herokuapp.com/](Postboard LMS) to view in the browser
 
 ## Available Scripts
 

@@ -1,4 +1,10 @@
-import { Button, Grid, makeStyles, TextField } from "@material-ui/core";
+import {
+  Button,
+  Grid,
+  makeStyles,
+  Snackbar,
+  TextField,
+} from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import Select from "../../components/TeacherContent/controls/Select";
 import Input from "../../components/TeacherContent/controls/Input";
@@ -10,6 +16,11 @@ import { CustomButton } from "./controls/CustomButton";
 import SelectMultiple from "./controls/SelectMultiple";
 import { connect } from "react-redux";
 import { addAssignment } from "../../actions/assignments";
+import MuiAlert from "@material-ui/lab/Alert";
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 const initialFieldValues = {
   id: 0,
   type: "",
@@ -33,6 +44,19 @@ const useStyles = makeStyles((theme) => ({
 export function CreatePost(props) {
   const { values, setValues, handleInputChange } = useForm(initialFieldValues);
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
   return (
     <Form>
       {console.log(props)}
@@ -92,21 +116,12 @@ export function CreatePost(props) {
             Upload File
             <input type="file" hidden />
           </Button>
-          <CustomButton
-            type="submit"
-            text="Submit"
-            onClick={() =>
-              props.addAssignment(
-                "ABC",
-                "Quiz",
-                "Test",
-                0,
-                0,
-                false,
-                "Class123"
-              )
-            }
-          />
+          <CustomButton type="submit" text="Submit" onClick={handleClick} />
+          <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success">
+              Sucessfully Created the post !
+            </Alert>
+          </Snackbar>
           <CustomButton text="Reset" color="default"></CustomButton>
         </div>
       </Grid>

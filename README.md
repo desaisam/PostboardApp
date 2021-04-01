@@ -3,7 +3,7 @@
 Authors: Dan Paddock and Sameer Desai
 
 ### `Heroku Link`
-Open [https://postboard-sp21.herokuapp.com/](Postboard LMS) to view in the browser
+Open [Postboard LMS](https://postboard-sp21.herokuapp.com) to view in the browser
 
 ## Available Scripts
 

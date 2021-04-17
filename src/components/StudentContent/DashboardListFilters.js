@@ -39,10 +39,7 @@ const formatGroupLabel = (data) => (
   </div>
 );
 
-const defaultOptions = [
-  { value: "date", label: "Date", color: "#00B8D9" },
-  { value: "type", label: "Type", color: "#00B8D9" },
-];
+const defaultOptions = [{ value: "date", label: "Date", color: "#00B8D9" }];
 
 const assignmentTypes = [
   { value: "notes", label: "Notes", color: "#00B8D9" },

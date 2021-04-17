@@ -39,21 +39,38 @@ export class DashboardListItem extends React.Component {
     this.props.setPinnedFilter(this.state);
   };
 
+  colorSwitch(param) {
+    switch (param) {
+      case "Algebra":
+        return <span class="list-item__sub-title-red">{param}</span>;
+      case "History":
+        return <span className="list-item__sub-title-blue">{param}</span>;
+      case "Physics":
+        return <span className="list-item__sub-title-yellow">{param}</span>;
+      case "English":
+        return <span className="list-item__sub-title-green">{param}</span>;
+      case "Geometry":
+        return <span className="list-item__sub-title-orange">{param}</span>;
+    }
+  }
+
   render() {
     return (
       <div className="list-item">
         <div>
           {console.log(this.props)}
-          <span>{moment(this.props.dueDate).calendar()}</span>
-          <h3 className="list-item__title">{this.props.type}</h3>
-          <span className="list-item__sub-title">{this.props.course}</span>
+          <h2 className="list-item__title">
+            {moment(this.props.dueDate).calendar()}
+          </h2>
+          {moment(this.props.dueTime).format("LT")}
+          <p>{this.colorSwitch(this.props.course)}</p>
         </div>
-        <div>{this.props.title}</div>
+        <div className="list-item__name">{this.props.title}</div>
         <h3 className="list-item__data">
+          {this.props.type}
           <button className="button" onClick={this.pinAction}>
             <b>{this.state.pinned ? "Unpin" : "Pin"}</b>
           </button>
-          {moment(this.props.dueTime).format("LT")}
         </h3>
       </div>
     );

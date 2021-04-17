@@ -62,8 +62,9 @@ export class DashboardListItem extends React.Component {
           <h2 className="list-item__title">
             {moment(this.props.dueDate).calendar()}
           </h2>
+          {this.colorSwitch(this.props.course)}
+          &nbsp;
           {moment(this.props.dueTime).format("LT")}
-          <p>{this.colorSwitch(this.props.course)}</p>
         </div>
         <div className="list-item__name">{this.props.title}</div>
         <h3 className="list-item__data">

@@ -58,7 +58,6 @@ export class DashboardListItem extends React.Component {
     return (
       <div className="list-item">
         <div>
-          {console.log(this.props)}
           <h2 className="list-item__title">
             {moment(this.props.dueDate).calendar()}
           </h2>

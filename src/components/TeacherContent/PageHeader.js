@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PageHeader(props) {
   const classes = useStyles();
-  const { title, subTitle, icon, setComp } = props;
+  const { title, setComp, comp } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -52,9 +52,11 @@ export default function PageHeader(props) {
   return (
     <Paper elevation={0} square className={classes.root}>
       <div className={classes.pageHeader}>
-        <Button variant="contained" color="primary" onClick={handleClickOpen}>
-          Close
-        </Button>
+        {comp !== "Edit" && (
+          <Button variant="contained" color="primary" onClick={handleClickOpen}>
+            Close
+          </Button>
+        )}
         <Dialog
           open={open}
           aria-labelledby="alert-dialog-title"

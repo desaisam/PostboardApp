@@ -48,34 +48,37 @@ const TeacherDashboard = (props) => {
       <div className="content-container ">
         <div className="content-container__centered">
           <div className={classes.root}>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              onClick={handleButtonCreate}
-            >
-              Create Post
-            </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              onClick={handleButtonEdit}
-            >
-              Edit Post{"    "}
-            </Button>
+            {comp !== "Create" && comp !== "Edit" && (
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                onClick={handleButtonCreate}
+              >
+                Create Post
+              </Button>
+            )}
+            {comp !== "Edit" && comp !== "Create" && (
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                onClick={handleButtonEdit}
+              >
+                Manage Posts{"    "}
+              </Button>
+            )}
           </div>
         </div>
 
         {comp === "" && (
           <div>
-            <NestedGrid></NestedGrid>
+            <NestedGrid setComp2={setComp} />
           </div>
         )}
         {comp === "Create" && (
           <div>
             <PageHeader
-              title="Create Post"
               icon={<CreateIcon fontSize="small" />}
               setComp={setComp}
             />
@@ -85,8 +88,8 @@ const TeacherDashboard = (props) => {
         )}
         {comp === "Edit" && (
           <div>
-            <PageHeader title="Manage Post" setComp={setComp} />
-            <ManagePost></ManagePost>
+            <PageHeader setComp={setComp} comp={comp} />
+            <ManagePost setComp={setComp} comp={comp}></ManagePost>
           </div>
         )}
       </div>

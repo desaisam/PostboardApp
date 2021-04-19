@@ -14,9 +14,17 @@ import "../../styles/styles.scss";
 import "react-dates/lib/css/_datepicker.css";
 import Select from "react-select";
 import DashboardListForTeachers from "./DashboardListForTeachers";
-import { Box } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 export default function EditPost(props) {
+  const history = useHistory();
+  const { course, setComp, comp } = props;
+
+  const handleBack = () => {
+    setComp("");
+  };
+  // console.log(`COurse Name ${course}`);
   const defaultOptions = [
     { value: "date", label: "Date", color: "#00B8D9" },
     { value: "type", label: "Type", color: "#00B8D9" },
@@ -78,26 +86,23 @@ export default function EditPost(props) {
     },
   ];
   return (
-    <div className="container full-width ">
-      <div className="input-group__item ">
-        <input
-          type="text"
-          className="text-input"
-          placeholder="Search assignments"
-        />
-        {/* <div className="input-group__item">
-          <Select
-            className="select"
-            defaultValue={defaultOptions[0]}
-            options={groupedOptions}
-            formatGroupLabel={formatGroupLabel}
-          />
-        </div>
-        <div className="input-group__item">
-          <DateRangePicker showClearDates={true} numberOfMonths={1} />
-        </div> */}
-        <div className="content-box">
-          <DashboardListForTeachers></DashboardListForTeachers>
+    <div>
+      <Button
+        flex="top"
+        variant="contained"
+        color="primary"
+        onClick={handleBack}
+      >
+        Back
+      </Button>
+      <div className="container full-width ">
+        <div className="input-group__item ">
+          <div className="content-box">
+            <DashboardListForTeachers
+              courseName={course}
+              comp={comp}
+            ></DashboardListForTeachers>
+          </div>
         </div>
       </div>
     </div>

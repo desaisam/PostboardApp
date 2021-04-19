@@ -61,7 +61,7 @@ class App extends Component {
       addAssignment({
         course: "History",
         type: "Notes",
-        assignedTo: "Pol001",
+        assignedTo: "History 021",
         title: "Revolutionary War Notes",
         dueDate: moment().add(3, "days"),
         dueTime: moment().startOf("day").subtract(1, "minute"),
@@ -71,8 +71,52 @@ class App extends Component {
     store.dispatch(
       addAssignment({
         course: "History",
+        type: "Notes",
+        assignedTo: "History 021",
+        title: "Revolutionary War Notes",
+        dueDate: moment().add(3, "days"),
+        dueTime: moment().startOf("day").subtract(1, "minute"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "History",
+        type: "Exam",
+        assignedTo: "History 021",
+        title: "French Revolution",
+        dueDate: moment().add(10, "days"),
+        dueTime: moment().startOf("day").subtract(1, "minute"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "History",
+        type: "Notes",
+        assignedTo: "History 021",
+        title: "Revolutionary War Notes",
+        dueDate: moment().add(15, "days"),
+        dueTime: moment().startOf("day").subtract(1, "minute"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "History",
+        type: "Quiz",
+        assignedTo: "History 021",
+        title: "Egyptian Civilasation",
+        dueDate: moment().add(3, "days"),
+        dueTime: moment().startOf("day").subtract(1, "minute"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "History",
         type: "Test",
-        assignedTo: "Pol001",
+        assignedTo: "History 021",
         title: "Revolutionary War Test",
         dueDate: moment().add(5, "days"),
         dueTime: moment().startOf("day").subtract(1, "minute"),
@@ -90,11 +134,45 @@ class App extends Component {
         pinned: false,
       })
     );
+
+    store.dispatch(
+      addAssignment({
+        course: "Physics",
+        type: "Homework",
+        assignedTo: "Physics 004",
+        title: "Velocity Problems",
+        dueDate: moment().add(8, "days"),
+        dueTime: moment().startOf("day"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "Physics",
+        type: "Homework",
+        assignedTo: "Physics 004",
+        title: "Gravitation Problems",
+        dueDate: moment().add(10, "days"),
+        dueTime: moment().startOf("day"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "Physics",
+        type: "Quiz",
+        assignedTo: "Physics 004",
+        title: "Thermodynaics Quiz",
+        dueDate: moment().add(10, "days"),
+        dueTime: moment().startOf("day"),
+        pinned: false,
+      })
+    );
     store.dispatch(
       addAssignment({
         course: "Physics",
         type: "Test",
-        assignedTo: "Sci001",
+        assignedTo: "Physics 004",
         title: "Velocity Test",
         dueDate: moment().add(12, "days"),
         dueTime: moment().startOf("day").add(12, "hour"),
@@ -105,7 +183,7 @@ class App extends Component {
       addAssignment({
         course: "Geometry",
         type: "Homework",
-        assignedTo: "Geo002",
+        assignedTo: "Geometry 001",
         title: "Triangle Homework",
         dueDate: moment().add(12, "days"),
         dueTime: moment().startOf("day").add(12, "hour"),
@@ -114,10 +192,65 @@ class App extends Component {
     );
     store.dispatch(
       addAssignment({
+        course: "Geometry",
+        type: "Homework",
+        assignedTo: "Geometry 001",
+        title: "Circle Homework",
+        dueDate: moment().add(19, "days"),
+        dueTime: moment().startOf("day").add(12, "hour"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
         course: "Algebra",
         type: "Homework",
-        assignedTo: "Algo003",
+        assignedTo: "Algebra 001",
         title: "Exponentials Problems",
+        dueDate: moment().add(13, "days"),
+        dueTime: moment().startOf("day").add(8, "hour"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "English",
+        type: "Quiz",
+        assignedTo: "English 002",
+        title: "Nouns and Verbs",
+        dueDate: moment().add(13, "days"),
+        dueTime: moment().startOf("day").add(8, "hour"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "English",
+        type: "Homework",
+        assignedTo: "English 002",
+        title: "Subject verb agreement",
+        dueDate: moment().add(13, "days"),
+        dueTime: moment().startOf("day").add(8, "hour"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "English",
+        type: "Notes",
+        assignedTo: "English 002",
+        title: "William Wordsworth's works",
+        dueDate: moment().add(0, "days"),
+        dueTime: moment().startOf("day").add(8, "hour"),
+        pinned: false,
+      })
+    );
+    store.dispatch(
+      addAssignment({
+        course: "English",
+        type: "Notes",
+        assignedTo: "English 002",
+        title: "Merchent of Venice",
         dueDate: moment().add(13, "days"),
         dueTime: moment().startOf("day").add(8, "hour"),
         pinned: false,

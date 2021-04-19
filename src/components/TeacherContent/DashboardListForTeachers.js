@@ -19,9 +19,26 @@ const DashboardListForTeachers = (props) => (
         </div>
       ) : (
         props.assignments.map((assignment) => {
-          return (
-            <DashboardListItemForTeachers key={assignment.id} {...assignment} />
-          );
+          console.log(`Course Name in Dashboard : ${props.comp}`);
+          console.log(`Assigned to ${assignment.assignedTo}`);
+          //assignment.assignedTo === props.courseName
+          if (props.comp === "Edit") {
+            return (
+              <DashboardListItemForTeachers
+                key={assignment.id}
+                {...assignment}
+              />
+            );
+          } else {
+            if (assignment.assignedTo === props.courseName) {
+              return (
+                <DashboardListItemForTeachers
+                  key={assignment.id}
+                  {...assignment}
+                />
+              );
+            }
+          }
         })
       )}
     </div>

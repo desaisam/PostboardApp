@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import ManagePost from "./../ManagePosts";
 
 const useStyles = makeStyles({
   root: {
@@ -19,13 +20,20 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-  const { name } = props;
+
+  const { name, setCourse, imgaeLoc, setComp, descr } = props;
+  const handleClick = () => {
+    console.log(`Course Name in Media Card ${name}`);
+    setCourse(name);
+    console.log(imgaeLoc);
+    setComp("ManageClass");
+  };
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://picsum.photos/id/1/400"
+          image={imgaeLoc}
           title="Class School"
         />
         <CardContent>
@@ -33,11 +41,15 @@ export default function MediaCard(props) {
             {name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Click here to see details of this section.This is till under
-            construction.
+            {descr}
           </Typography>
         </CardContent>
       </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary" onClick={handleClick}>
+          Manage Class
+        </Button>
+      </CardActions>
     </Card>
   );
 }

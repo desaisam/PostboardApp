@@ -17,6 +17,11 @@ import SelectMultiple from "./controls/SelectMultiple";
 import { connect } from "react-redux";
 import { addAssignment } from "../../actions/assignments";
 import MuiAlert from "@material-ui/lab/Alert";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import { useHistory } from "react-router-dom";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -43,9 +48,20 @@ const useStyles = makeStyles((theme) => ({
 
 export function CreatePost(props) {
   const { values, setValues, handleInputChange } = useForm(initialFieldValues);
+  const history = useHistory();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [openReset, setOpenReset] = React.useState(false);
+  const handleReset = () => {
+    setOpenReset(true);
+  };
 
+  const handleYes = () => {
+    setOpenReset(false);
+  };
+  const handleNo = () => {
+    setOpenReset(false);
+  };
   const handleClick = () => {
     setOpen(true);
   };
@@ -116,13 +132,38 @@ export function CreatePost(props) {
             Upload File
             <input type="file" hidden />
           </Button>
+
+          <CustomButton
+            text="Reset"
+            color="default"
+            onClick={handleReset}
+          ></CustomButton>
+          <Dialog
+            open={openReset}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                Are you sure you want to Reset ?
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleNo} color="primary">
+                NO
+              </Button>
+              <Button onClick={handleYes} color="primary" autoFocus>
+                YES
+              </Button>
+            </DialogActions>
+          </Dialog>
+
           <CustomButton type="submit" text="Submit" onClick={handleClick} />
-          <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
+          <Snackbar open={open} autoHideDuration={10000} onClose={handleClose}>
             <Alert onClose={handleClose} severity="success">
               Sucessfully Created the post !
             </Alert>
           </Snackbar>
-          <CustomButton text="Reset" color="default"></CustomButton>
         </div>
       </Grid>
     </Form>

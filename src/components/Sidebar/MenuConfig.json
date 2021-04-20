@@ -6,31 +6,31 @@
     },
     {
       "title": "Algebra 001",
-      "icon": "fa fa-tachometer-alt",
+      "icon": "color-red",
       "active": false,
       "type": "dropdown"
     },
     {
       "title": "History 021",
-      "icon": "fa fa-shopping-cart",
+      "icon": "color-blue",
       "active": false,
       "type": "dropdown"
     },
     {
       "title": "Physics 004",
-      "icon": "far fa-gem",
+      "icon": "color-yellow",
       "active": false,
       "type": "dropdown"
     },
     {
       "title": "English 002",
-      "icon": "fa fa-chart-line",
+      "icon": "color-green",
       "active": false,
       "type": "dropdown"
     },
     {
       "title": "Geometry 001",
-      "icon": "fa fa-globe",
+      "icon": "color-orange",
       "active": false,
       "type": "dropdown"
     }

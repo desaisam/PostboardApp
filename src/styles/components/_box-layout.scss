@@ -8,6 +8,16 @@
   width: 100vw;
 }
 
+.box-layout__box-login {
+  align-items: center;
+  background-image: url("../images/WALLPAPER.jpeg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
 .box-layout__box {
   background: fade-out(rgb(237, 236, 236), 0.15);
   border: #ced7d8;
@@ -17,7 +27,17 @@
   width: 25rem;
 }
 
+.box-layout__login {
+  background: fade-out(rgb(237, 236, 236), 0.05);
+  border: #ced7d8;
+  border-radius: 3px;
+  padding: $xl-size $m-size;
+  text-align: center;
+  width: 35rem;
+}
+
 .box-layout__title {
   margin: 0 0 $m-size 0;
   line-height: 1;
+  font-size: 60;
 }

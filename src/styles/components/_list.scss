@@ -30,8 +30,12 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    padding: $m-size;
+    padding: $s-size;
   }
+}
+
+.list-item__name {
+  text-decoration: underline;
 }
 
 .list-item--message {
@@ -45,13 +49,31 @@
 }
 .list-item__title {
   margin: 0;
-  word-break: break-all;
+  padding: 0;
 }
 
-.list-item__sub-title {
-  background: #f1f1f1;
-  padding: 1px;
-  border-radius: 1px;
+.list-item__sub-title-red {
+  background: rgba(255, 0, 0, 0.3);
+  color: $grey;
+}
+
+.list-item__sub-title-blue {
+  background: rgba(0, 0, 255, 0.3);
+  color: $grey;
+}
+
+.list-item__sub-title-orange {
+  background: rgba(255, 165, 0, 0.3);
+  color: $grey;
+}
+
+.list-item__sub-title-green {
+  background: rgba(0, 128, 0, 0.3);
+  color: $grey;
+}
+
+.list-item__sub-title-yellow {
+  background: rgba(255, 255, 0, 0.3);
   color: $grey;
 }
 

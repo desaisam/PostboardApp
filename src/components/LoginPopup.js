@@ -14,8 +14,8 @@ const contentStyle = {
 const LoginPopup = () => {
   const history = useHistory();
   return (
-    <div className="box-layout">
-      <div className="box-layout__box">
+    <div className="box-layout__box-login">
+      <div className="box-layout__login">
         <h1 className="box-layout__title">Postboard</h1>
         <p>Welcome, are you a Student or a Teacher?</p>
         <Popup

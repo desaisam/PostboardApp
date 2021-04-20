@@ -9,7 +9,7 @@ const DashboardList = (props) => (
     <div className="list-header">
       <div className="show-for-mobile">Assignments</div>
       <div className="show-for-desktop">Assignment</div>
-      <div className="show-for-desktop">Due Time</div>
+      <div className="show-for-desktop">Pinned</div>
     </div>
     <div className="list-body" style={{ overflowY: "scroll", height: "550px" }}>
       {props.assignments.length === 0 ? (

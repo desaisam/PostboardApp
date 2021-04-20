@@ -74,7 +74,7 @@ const TeacherDashboard = (props) => {
         </div>
 
         {comp === "" && (
-          <div>
+          <div style={{ overflowY: "scroll" }}>
             <NestedGrid setComp={setComp} setCourse={setCourse} />
           </div>
         )}

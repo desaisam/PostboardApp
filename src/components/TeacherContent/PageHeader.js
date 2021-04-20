@@ -52,7 +52,7 @@ export default function PageHeader(props) {
   return (
     <Paper elevation={0} square className={classes.root}>
       <div className={classes.pageHeader}>
-        {comp !== "Edit" && (
+        {comp !== "ManagePosts" && comp !== "ManageClass" && (
           <Button variant="contained" color="primary" onClick={handleClickOpen}>
             Close
           </Button>

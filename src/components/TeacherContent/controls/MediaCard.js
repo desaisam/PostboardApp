@@ -21,12 +21,12 @@ const useStyles = makeStyles({
 export default function MediaCard(props) {
   const classes = useStyles();
 
-  const { name, setComp, setCourse, imgaeLoc, setComp2 } = props;
+  const { name, setCourse, imgaeLoc, setComp, descr } = props;
   const handleClick = () => {
-    setComp("Edit");
+    console.log(`Course Name in Media Card ${name}`);
     setCourse(name);
     console.log(imgaeLoc);
-    setComp2("Edit");
+    setComp("ManageClass");
   };
   return (
     <Card className={classes.root}>
@@ -41,8 +41,7 @@ export default function MediaCard(props) {
             {name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Click here to see details of this section.This is till under
-            construction.
+            {descr}
           </Typography>
         </CardContent>
       </CardActionArea>
